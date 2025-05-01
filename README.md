@@ -40,7 +40,7 @@ An example format of the input data for MOCHI is shown in the folder `data/examp
 
 ## Usage
 The running examples of three algorithms can be found at `BasicRunner.cpp`, `MWRunner.cpp`, and `MDRunner.cpp`. Please compile the project with the `CMakeLists.txt` and run `BasicRunner`, `MWRunner`, and `MDRunner`, respectively, to execute the basic algorithm, MW algorithm, and MD algorithm. You can set the dataset and path in `Config/config.h`.
-The algorithm for generating motifs and query vertices can be found at `GenerateQuery.cpp`. The queries will be stored at `data/xxx(your dataset name)/RandomMotif`. Please move them to the folder `data/xxx(your dataset name)/motifs` when executing queries.
+The algorithm for generating motifs and query vertices can be found at `GenerateQuery.cpp`. The generated queries will be stored at `data/xxx(your dataset name)/RandomMotif`. Please move them to the folder `data/xxx(your dataset name)/motifs` when executing queries.
 
 ## Requirements
 - GCC 11.2.1
