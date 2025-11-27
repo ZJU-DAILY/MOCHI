@@ -18,7 +18,7 @@ We use **RapidMatch** [1] to find all the motif instances, which can be found [h
 
 ## Datasets
 We use five real-world HINs in our experiments, including [CIDeRplus](https://mips.helmholtz-muenchen.de/CIDeRplus), [DBLP](https://github.com/Jhy1993/HAN/tree/master), [TMDB](https://www.kaggle.com/tmdb/tmdb-movie-metadata), [Freebase](https://freebase-easy.cs.uni-freiburg.de/dump/), [DBpedia](https://www.dbpedia.org/).
-The processed data can be found [here](https://drive.google.com/file/d/1DagcKzaDlGQ3YBW9lUz_Hlp78vYJT4JE/view?usp=sharing).
+The processed data can be found [here](https://drive.google.com/file/d/1i_HRNss7Sw-OxlY3mtYARn53eJ1cni3c/view?usp=sharing).
 The statistics and references of these datasets can be found in our paper.
 
 ## Input Format
@@ -40,7 +40,7 @@ An example format of the input data for MOCHI is shown in the folder `data/examp
 
 ## Usage
 The running examples of three algorithms can be found at `BasicRunner.cpp`, `MWRunner.cpp`, and `MDRunner.cpp`. Please compile the project with the `CMakeLists.txt` and run `BasicRunner`, `MWRunner`, and `MDRunner`, respectively, to execute the basic algorithm, MW algorithm, and MD algorithm. You can set the dataset and path in `Config/config.h`.
-The algorithm for generating motifs and query vertices can be found at `GenerateQuery.cpp`. The generated queries will be stored at `data/xxx(your dataset name)/RandomMotif`. Please move them to the folder `data/xxx(your dataset name)/motifs` when executing queries.
+The algorithm for generating motifs and query vertices can be found at `GenerateQuery.cpp`. The generated queries will be stored at `data/{dataset}/RandomMotif`. Please move them to the folder `data/{dataset}/motifs` when executing queries.
 
 ## Requirements
 - GCC 11.2.1
