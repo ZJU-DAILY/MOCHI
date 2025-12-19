@@ -1,0 +1,4 @@
+global match time: 0.043870 s
+generate conNodeGraph time: 0.052559 s
+match num: 14909
+vertex with embedding num: 1061

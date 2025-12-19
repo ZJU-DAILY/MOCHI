@@ -1,0 +1,132 @@
+cmake_minimum_required(VERSION 3.26)
+project(MOCHI)
+include_directories(
+        ${PROJECT_SOURCE_DIR}/RapidMatch/utility
+        ${PROJECT_SOURCE_DIR}/RapidMatch
+)
+set(CMAKE_CXX_FLAGS
+        "${CMAKE_CXX_FLAGS} -std=c++17 -O3 -g -pthread -march=native")
+add_subdirectory(RapidMatch/graph)
+add_subdirectory(RapidMatch/matching)
+add_subdirectory(RapidMatch/utility)
+add_subdirectory(RapidMatch/preprocessing)
+set(MATCH_FILE_LIST
+        RapidMatch/rapidMatch.cpp
+        RapidMatch/rapidMatch.h
+        Match/match.h
+        Match/match.cpp
+        graph/graph.cpp
+        graph/graph.h
+        RapidMatch/matching/matchingcommand.cpp
+        RapidMatch/matching/matchingcommand.h
+        RapidMatch/matching/execution_tree.h
+        RapidMatch/matching/execution_tree_node.h
+        RapidMatch/matching/execution_tree_node.cpp
+        RapidMatch/matching/execution_tree_generator.cpp
+        RapidMatch/matching/execution_tree_generator.h
+        RapidMatch/matching/execution_tree.cpp
+        RapidMatch/matching/preprocessor.cpp
+        RapidMatch/matching/preprocessor.h
+        RapidMatch/matching/encoder.cpp
+        RapidMatch/matching/encoder.h
+        RapidMatch/matching/query_plan_generator.cpp
+        RapidMatch/matching/query_plan_generator.h
+        RapidMatch/graph/graph.cpp
+        RapidMatch/utility/graphoperations.cpp
+        RapidMatch/utility/commandparser.cpp
+        RapidMatch/utility/commandparser.h
+        RapidMatch/utility/computesetintersection.h
+        RapidMatch/utility/computesetintersection.cpp
+        RapidMatch/utility/QFilter.h
+        RapidMatch/utility/global_variables.h
+        RapidMatch/utility/global_variables.cpp
+        RapidMatch/utility/han/intersection_algos.cpp
+        RapidMatch/utility/han/utils/util.cpp
+        RapidMatch/utility/han/intersection_algos.hpp
+        RapidMatch/utility/hashjoin/hash_helpers.h
+        RapidMatch/utility/hashjoin/nop_join.h
+        RapidMatch/utility/relation/flat_relation.h
+        RapidMatch/utility/hashjoin/nop_join.cpp
+        RapidMatch/utility/leapfrogtriejoin/leapfrogtriejoin.cpp
+        RapidMatch/utility/leapfrogtriejoin/leapfrogtriejoin.h
+        RapidMatch/utility/relation/trie_relation.h
+        RapidMatch/utility/primitive/search.cpp
+        RapidMatch/utility/primitive/search.h
+        RapidMatch/utility/relation/encoded_trie_relation.h
+        RapidMatch/utility/relation/hash_relation.h
+        RapidMatch/utility/relation/catalog.h
+        RapidMatch/utility/relation/catalog.cpp
+        RapidMatch/utility/relation/edge_relation.h
+        RapidMatch/utility/primitive/scan.cpp
+        RapidMatch/utility/primitive/scan.h
+        RapidMatch/utility/primitive/semi_join.cpp
+        RapidMatch/utility/primitive/semi_join.h
+        RapidMatch/utility/primitive/projection.cpp
+        RapidMatch/utility/primitive/projection.h
+        RapidMatch/utility/primitive/nlf_filter.cpp
+        RapidMatch/utility/primitive/nlf_filter.h
+        RapidMatch/utility/nucleus_decomposition/nd.h
+        RapidMatch/utility/nucleus_decomposition/bucket.h
+        RapidMatch/utility/nucleus_decomposition/bucket.cpp
+        RapidMatch/utility/nucleus_decomposition/hierarchy.cpp
+        RapidMatch/utility/nucleus_decomposition/k3-4.cpp
+        RapidMatch/utility/nucleus_decomposition/kcore.cpp
+        RapidMatch/utility/nucleus_decomposition/ktruss.cpp
+        RapidMatch/utility/nucleus_decomposition/util.cpp
+        RapidMatch/utility/nucleus_decomposition/nd_interface.cpp
+        RapidMatch/utility/nucleus_decomposition/nd_interface.h
+)
+
+add_executable(
+        BasicRunner BasicRunner.cpp
+        graph/graph.cpp
+        graph/graph.h
+        Match/match.cpp
+        Match/match.h
+        Result/result.h
+        Util/Util.cpp
+        Util/Util.h
+        Naive_origin/NaiveOriginPeeling.cpp
+        Naive_origin/NaiveOriginPeeling.h
+        ${MATCH_FILE_LIST}
+)
+
+add_executable(
+        MWRunner MWRunner.cpp
+        graph/graph.cpp
+        graph/graph.h
+        Match/match.cpp
+        Match/match.h
+        Result/result.h
+        Util/Util.cpp
+        Util/Util.h
+        AdvancedHIN/AdvancedPeeling.cpp
+        AdvancedHIN/AdvancedPeeling.h
+        ${MATCH_FILE_LIST}
+)
+
+add_executable(
+        MDRunner MDRunner.cpp
+        graph/graph.cpp
+        graph/graph.h
+        Match/match.cpp
+        Match/match.h
+        Result/result.h
+        Util/Util.cpp
+        Util/Util.h
+        LocalHIN/localHIN.cpp
+        LocalHIN/localHIN.h
+        ${MATCH_FILE_LIST}
+)
+
+add_executable(
+        generateQuery GenerateQuery.cpp
+        graph/graph.cpp
+        graph/graph.h
+        Match/match.cpp
+        Match/match.h
+        Result/result.h
+        Util/Util.cpp
+        Util/Util.h
+        ${MATCH_FILE_LIST}
+)
