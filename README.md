@@ -31,7 +31,7 @@ An example format of the input data for MOCHI is shown in the folder `data/examp
 
 6. `graph.txt`: Each line starts with the vertex id, followed by a list of neighbor vertex id and edge id.
 
-7. `queryGraph.txt/matchGraph.txt`: Input format of the graph in RapidMatch. It starts with `t |V| |E|`, where V is the vertex set and E is the edge set. A vertex and an edge are formatted as `v {vertex id} {vertex type} {vertex degree}` and `e {vertex id} {vertex id}` respectively. The vertex id should start from 0 and the range should be limited within `[0,|V|-1]`.
+7. `queryGraph.txt/matchGraph.txt`: Input format of the graph in RapidMatch. It starts with `t |V| |E|`, where V is the vertex set and E is the edge set. The vertex and an edge are formatted as `v {vertex id} {vertex type} {vertex degree}` and `e {vertex id} {vertex id}`, respectively. The vertex id should start from 0 and the range should be limited within `[0,|V|-1]`.
 
 ## Usage
 The running examples of three algorithms can be found at `BasicRunner.cpp`, `MWRunner.cpp`, and `MDRunner.cpp`. Please compile the project with the `CMakeLists.txt` and run `BasicRunner`, `MWRunner`, and `MDRunner` to execute the basic algorithm, MW algorithm, and MD algorithm, respectively. You can set the configuration in `Config/config.h`. The algorithm for generating motifs and query vertices can be found at `GenerateQuery.cpp`.
